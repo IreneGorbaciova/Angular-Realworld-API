@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('loginToApplication', () => {
+    cy.visit('./login')
+    cy.get('[placeholder="Email"]').type('rinagorbaciova@gmail.com')
+    cy.get('[placeholder="Password"]').type('Test_Password')
+    cy.get('form').submit()
+})
